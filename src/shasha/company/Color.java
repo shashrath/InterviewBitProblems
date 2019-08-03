@@ -1,6 +1,6 @@
 package shasha.company;
 
-public static enum Color {
+public  enum Color {
     ORANGE,
     BLUE,
     GREEN;
