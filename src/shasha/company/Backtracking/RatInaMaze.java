@@ -1,7 +1,8 @@
 package shasha.company.Backtracking;
 
 public class RatInaMaze {
-    private static int N =4;
+    private static int N = 4;
+
     public static void main(String[] args) {
         RatInaMaze ratInaMaze = new RatInaMaze();
         int maze[][] = {{1, 0, 0, 0}, {1, 1, 0, 1}, {0, 1, 0, 0}, {1, 1, 1, 1}};
@@ -11,7 +12,7 @@ public class RatInaMaze {
         ratInaMaze.mazeSolution(maze);
     }
 
-    private void printSolution(int[][] sol){
+    private void printSolution(int[][] sol) {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 System.out.print(sol[i][j] + "\t");
@@ -27,28 +28,26 @@ public class RatInaMaze {
                 sol[i][j] = 0;
             }
         }
-        if(mazeUtil(maze,sol,0,0))
+        if (mazeUtil(maze, sol, 0, 0))
             printSolution(sol);
         else
             System.out.println("No Path found");
     }
 
-    private boolean mazeUtil(int[][] maze, int[][]sol,int x,int y)
-    {
-        if(x<4 && y<4 && maze[x][y]==1){
-            sol[x][y]=1;
-            if(x==3 && y==3)
+    private boolean mazeUtil(int[][] maze, int[][] sol, int x, int y) {
+        if (x < 4 && y < 4 && maze[x][y] == 1) {
+            sol[x][y] = 1;
+            if (x == 3 && y == 3)
                 return true;
-            if(mazeUtil(maze,sol,x+1,y))
+            if (mazeUtil(maze, sol, x + 1, y))
                 return true;
-            else if(mazeUtil(maze,sol,x,y+1))
+            else if (mazeUtil(maze, sol, x, y + 1))
                 return true;
-            else{
-                sol[x][y]=0;
+            else {
+                sol[x][y] = 0;
                 return false;
             }
-        }
-        else
+        } else
             return false;
     }
 }

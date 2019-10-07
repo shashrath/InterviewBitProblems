@@ -8,8 +8,9 @@ public class MinimizeAbsoluteDifference {
         ArrayList<Integer> A = new ArrayList<>(Arrays.asList(1, 4, 5, 8, 10));
         ArrayList<Integer> B = new ArrayList<>(Arrays.asList(6, 9, 15));
         ArrayList<Integer> C = new ArrayList<>(Arrays.asList(2, 3, 6, 6));
-        System.out.println(solve(A,B,C));
+        System.out.println(solve(A, B, C));
     }
+
     private static int solve(ArrayList<Integer> A, ArrayList<Integer> B, ArrayList<Integer> C) {
         int i, j, k;
 
@@ -26,8 +27,7 @@ public class MinimizeAbsoluteDifference {
         min_diff = Math.abs(Math.max(A.get(i), Math.max(B.get(j), C.get(k)))
                 - Math.min(A.get(i), Math.min(B.get(j), C.get(k))));
 
-        while (i != -1 && j != -1 && k != -1)
-        {
+        while (i != -1 && j != -1 && k != -1) {
             current_diff = Math.abs(Math.max(A.get(i), Math.max(B.get(j), C.get(k)))
                     - Math.min(A.get(i), Math.min(B.get(j), C.get(k))));
 

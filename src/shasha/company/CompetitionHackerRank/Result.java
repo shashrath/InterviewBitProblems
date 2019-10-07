@@ -15,18 +15,16 @@ class Result {
 
     public static String productName(List<String> names) {
         ArrayList<TreeSet<Character>> s = new ArrayList<>(5);
-        for(int j=0; j< names.size();j++){
+        for (int j = 0; j < names.size(); j++) {
             s.add(new TreeSet<>());
-            for(int i=0;i<names.get(j).length();i++){
+            for (int i = 0; i < names.get(j).length(); i++) {
                 s.get(j).add(names.get(j).charAt(i));
             }
         }
         StringBuilder result = new StringBuilder();
-        for(int i=0;i<5;i++)
-        {
-            for(char j='z';j>='a';j--)
-            {
-                if(!s.get(i).contains(j)){
+        for (int i = 0; i < 5; i++) {
+            for (char j = 'z'; j >= 'a'; j--) {
+                if (!s.get(i).contains(j)) {
                     result.append(j);
                     break;
                 }

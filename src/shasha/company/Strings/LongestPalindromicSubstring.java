@@ -6,6 +6,7 @@ public class LongestPalindromicSubstring {
         System.out.println("Length is: " +
                 longestPalindrome(str));
     }
+
     static String longestPalindrome(String str) {
         int n = str.length();   // get length of input string
 
@@ -34,8 +35,7 @@ public class LongestPalindromicSubstring {
         for (int k = 3; k <= n; ++k) {
 
             // Fix the starting index
-            for (int i = 0; i < n - k + 1; ++i)
-            {
+            for (int i = 0; i < n - k + 1; ++i) {
                 // Get the ending index of substring from
                 // starting index i and length k
                 int j = i + k - 1;
@@ -55,8 +55,8 @@ public class LongestPalindromicSubstring {
             }
         }
         System.out.print("Longest palindrome substring is; ");
-       // printSubStr(str, start, start + maxLength - 1);
+        // printSubStr(str, start, start + maxLength - 1);
 
-        return str.substring(start,start+maxLength); // return length of LPS
+        return str.substring(start, start + maxLength); // return length of LPS
     }
 }

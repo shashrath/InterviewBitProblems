@@ -3,13 +3,14 @@ package shasha.company;
 public class Interval {
     int start;
     int end;
-    Interval(){
+
+    Interval() {
         this.start = 0;
         this.end = 0;
     }
-    Interval(int start, int end)
-    {
-        this.start=start;
-        this.end= end;
+
+    Interval(int start, int end) {
+        this.start = start;
+        this.end = end;
     }
 }

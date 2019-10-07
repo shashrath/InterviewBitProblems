@@ -9,16 +9,16 @@ public class SingleNumber {
     static final int INT_SIZE = 32;
 
     public static void main(String[] args) {
-        ArrayList<Integer> al = new ArrayList<>(Arrays.asList(3,2,3,3));
+        ArrayList<Integer> al = new ArrayList<>(Arrays.asList(3, 2, 3, 3));
         System.out.println(singleNumber(al));
     }
+
     private static int singleNumber(final List<Integer> A) {
         int ones = 0, twos = 0;
-        int n= A.size();
+        int n = A.size();
         int common_bit_mask;
 
-        for(int i=0; i<n; i++ )
-        {
+        for (int i = 0; i < n; i++) {
             /*"one & arr[i]" gives the bits that are there in
             both 'ones' and new element from arr[]. We
             add these bits to 'twos' using bitwise OR*/
@@ -60,6 +60,7 @@ public class SingleNumber {
         System.out.println();
         return ones;
     }
+
     private static void printBinary(int n) {
         long res = 0;
         for (int i = 31; i >= 0; i--) {
@@ -71,20 +72,18 @@ public class SingleNumber {
         System.out.println();
     }
 
-    private  static int OccureOnce(final List<Integer> A){
+    private static int OccureOnce(final List<Integer> A) {
         int result = 0;
         int x, sum;
 
         // Iterate through every bit
-        for(int i=0; i<INT_SIZE; i++)
-        {
+        for (int i = 0; i < INT_SIZE; i++) {
             // Find sum of set bits at ith position in all
             // array elements
             sum = 0;
             x = (1 << i);
-            for(int j=0; j<A.size(); j++)
-            {
-                if((A.get(j) & x) ==0)
+            for (int j = 0; j < A.size(); j++) {
+                if ((A.get(j) & x) == 0)
                     sum++;
             }
             // The bits with sum not multiple of 3, are the

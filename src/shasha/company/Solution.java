@@ -10,6 +10,7 @@ public class Solution {
     public static void main(String[] args) {
         System.out.println(validTimestamp("1970-01-01T01:02:00Z"));
     }
+
     public static String validTimestamp(String timestamp) {
         String timeFormat = null;
 

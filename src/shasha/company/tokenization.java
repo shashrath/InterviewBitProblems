@@ -3,7 +3,6 @@ package shasha.company;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.StringTokenizer;
@@ -11,8 +10,8 @@ import java.util.StringTokenizer;
 public class tokenization {
     public static void main(String[] args) {
         String s = "pool_fridge_wifi";
-        String str ="";
-        if(!str.isEmpty())
+        String str = "";
+        if (!str.isEmpty())
             System.out.println("yaahooo");
         ArrayList<String> al = new ArrayList<>(Arrays.asList("water_in_pool", "pond_fridge_drink", "pool_wifi_speed"));
         solve(s, al);

@@ -1,6 +1,10 @@
 package shasha.company.Backtracking;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class CombinationSum {
     private ArrayList<ArrayList<Integer>> result;
@@ -35,12 +39,12 @@ public class CombinationSum {
         if (sum == B)
             result.add(new ArrayList<Integer>(temp));
         else if (sum > B)
-            return ;
+            return;
         else {
             for (int i = pos; i < A.size(); i++) {
                 temp.add(A.get(i));
                 sumUtil(result, A, temp, B, sum + A.get(i), i);
-                temp.remove(temp.size()-1);
+                temp.remove(temp.size() - 1);
             }
         }
 

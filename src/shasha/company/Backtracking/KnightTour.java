@@ -15,7 +15,7 @@ public class KnightTour {
 
     private void printSolution(int sol[][]) {
         for (int x = 0; x < N; x++) {
-            for (int y = 0; y < N; y++){
+            for (int y = 0; y < N; y++) {
                 System.out.print(sol[x][y] + "\t");
             }
             System.out.println();

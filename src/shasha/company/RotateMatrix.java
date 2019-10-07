@@ -4,33 +4,31 @@ import java.util.ArrayList;
 
 public class RotateMatrix {
     public static void main(String[] args) {
-        int a=3;
-        int count =1;
+        int a = 3;
+        int count = 1;
         ArrayList<ArrayList<Integer>> al = new ArrayList<>();
-        for(int i=0;i<a;i++){
+        for (int i = 0; i < a; i++) {
             al.add(new ArrayList<>());
-            for(int j=0; j< a; j++)
-            {
+            for (int j = 0; j < a; j++) {
                 al.get(i).add(count);
                 count++;
             }
         }
-        for(ArrayList<Integer> b: al)
-        {
-            for(Integer c: b)
+        for (ArrayList<Integer> b : al) {
+            for (Integer c : b)
                 System.out.print(c + " ");
             System.out.println();
         }
         rotate(al);
-        for(ArrayList<Integer> b: al)
-        {
-            for(Integer c: b)
+        for (ArrayList<Integer> b : al) {
+            for (Integer c : b)
                 System.out.print(c + " ");
             System.out.println();
         }
     }
-    private static void rotate(ArrayList<ArrayList<Integer>> A){
-        int N= A.size();
+
+    private static void rotate(ArrayList<ArrayList<Integer>> A) {
+        int N = A.size();
 /*        for (int x = 0; x < N / 2; x++)
         {
             // Consider elements in group of 4 in
@@ -57,10 +55,8 @@ public class RotateMatrix {
                 A.get(N-1-y).set(x,temp);
             }
         }*/
-        for (int i = 0; i < N / 2; i++)
-        {
-            for (int j = i; j < N - i - 1; j++)
-            {
+        for (int i = 0; i < N / 2; i++) {
+            for (int j = i; j < N - i - 1; j++) {
 
                 // Swap elements of each cycle
                 // in clockwise direction
@@ -68,16 +64,16 @@ public class RotateMatrix {
                 int temp = A.get(i).get(j);
 
                 //a[i][j] = a[N - 1 - j][i];
-                A.get(i).set(j,A.get(N-1-j).get(i));
+                A.get(i).set(j, A.get(N - 1 - j).get(i));
 
-               // a[N - 1 - j][i] = a[N - 1 - i][N - 1 - j];
-                A.get(N-1-j).set(i,A.get(N-1-i).get(N-1-j));
+                // a[N - 1 - j][i] = a[N - 1 - i][N - 1 - j];
+                A.get(N - 1 - j).set(i, A.get(N - 1 - i).get(N - 1 - j));
 
-               // a[N - 1 - i][N - 1 - j] = a[j][N - 1 - i];
-                A.get(N-1-i).set(N-1-j,A.get(j).get(N-1-i));
+                // a[N - 1 - i][N - 1 - j] = a[j][N - 1 - i];
+                A.get(N - 1 - i).set(N - 1 - j, A.get(j).get(N - 1 - i));
 
                 //a[j][N - 1 - i] = temp;
-                A.get(j).set(N-1-i,temp);
+                A.get(j).set(N - 1 - i, temp);
             }
         }
 

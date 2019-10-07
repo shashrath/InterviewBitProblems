@@ -75,47 +75,42 @@ public class Triplets {
     private static int solve(ArrayList<String> A) {
         int n = A.size();
         double[] arr = new double[n];
-        for(int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = Double.valueOf(A.get(i));
         }
-        double a=arr[0], b=arr[1], c=arr[2];
-        for(int i=3 ; i<n ; i++){
+        double a = arr[0], b = arr[1], c = arr[2];
+        for (int i = 3; i < n; i++) {
             // check if sum fall in (1, 2)
-            if(a+b+c > 1 && a+b+c < 2){
+            if (a + b + c > 1 && a + b + c < 2) {
                 return 1;
             }
             // if not, then check is sum greater than 2
             // if so, then replece MAX(a,b,c) to new number
-            else if(a+b+c > 2){
-                if(a>b && a>c){
+            else if (a + b + c > 2) {
+                if (a > b && a > c) {
                     a = arr[i];
-                }
-                else if(b>a && b>c){
+                } else if (b > a && b > c) {
                     b = arr[i];
-                }
-                else if(c>a && c>b){
+                } else if (c > a && c > b) {
                     c = arr[i];
                 }
             }
             // else then sum must be less than 1
             // then replace MIN(a,b,c) to new number
-            else{
-                if(a<b && a<c){
+            else {
+                if (a < b && a < c) {
                     a = arr[i];
-                }
-                else if(b<a && b<c){
+                } else if (b < a && b < c) {
                     b = arr[i];
-                }
-                else if(c<a && c<b){
+                } else if (c < a && c < b) {
                     c = arr[i];
                 }
             }
         }
         // check for last a, b, c  triplet
-        if(a+b+c > 1 && a+b+c < 2){
+        if (a + b + c > 1 && a + b + c < 2) {
             return 1;
-        }
-        else{
+        } else {
             return 0;
         }
     }

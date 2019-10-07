@@ -5,9 +5,10 @@ import java.util.Arrays;
 
 public class MaximumAbsoluteDifference {
     public static void main(String[] args) {
-        ArrayList<Integer> al = new ArrayList<>(Arrays.asList(1,3,-1,4,5,6,7,8));
+        ArrayList<Integer> al = new ArrayList<>(Arrays.asList(1, 3, -1, 4, 5, 6, 7, 8));
         System.out.println(maxArr(al));
     }
+
     private static int maxArr(ArrayList<Integer> a) {
         int max1 = Integer.MIN_VALUE, min1 = Integer.MAX_VALUE;
         int max2 = Integer.MIN_VALUE, min2 = Integer.MAX_VALUE;
@@ -21,6 +22,6 @@ public class MaximumAbsoluteDifference {
             max2 = Math.max(max2, a.get(i) - i);
             min2 = Math.min(min2, a.get(i) - i);
         }
-        return Math.max(max1-min1,max2-min2);
+        return Math.max(max1 - min1, max2 - min2);
     }
 }

@@ -5,12 +5,14 @@ import java.util.ArrayList;
 public class NthPermutation {
     private Integer count;
     private String s;
-    NthPermutation (){
-        count =0;
-        s= null;
+
+    NthPermutation() {
+        count = 0;
+        s = null;
     }
+
     public static void main(String[] args) {
-        int c = 0/1;
+        int c = 0 / 1;
         NthPermutation nthPermutation = new NthPermutation();
         System.out.println(nthPermutation.getPermutation(3, 5));
     }

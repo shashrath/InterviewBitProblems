@@ -1,7 +1,6 @@
 package shasha.company;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 //Find two prime numbers with given sum (Even Number)
 public class PrimeNumberSumEven {
@@ -12,15 +11,15 @@ public class PrimeNumberSumEven {
         long endTime = System.nanoTime();
         long durationInNano = (endTime - startTime);
         System.out.println("Time in milli second: " + durationInNano);
-        primeNumbers(res,50);
+        primeNumbers(res, 50);
 
 /*        for(int i: res)
             System.out.println(i);*/
     }
 
     //SieveOfEratosthenes
-    private static ArrayList<Integer> findPrimeNumbers(Integer n){
-        boolean isPrime[] = new boolean[n+1];
+    private static ArrayList<Integer> findPrimeNumbers(Integer n) {
+        boolean isPrime[] = new boolean[n + 1];
         ArrayList<Integer> al = new ArrayList<>();
         isPrime[0] = isPrime[1] = false;
         for (int i = 2; i <= n; i++)
@@ -30,26 +29,24 @@ public class PrimeNumberSumEven {
         {
             // If isPrime[p] is not changed,
             // then it is a prime
-            if (isPrime[p])
-            {
+            if (isPrime[p]) {
                 // Update all multiples of p
                 for (int i = p * p; i <= n; i += p) // Important Points again p*p is important to know Why
                     isPrime[i] = false;
             }
         }
-        for(int i=2;i<=n;i++){
-            if(isPrime[i])
+        for (int i = 2; i <= n; i++) {
+            if (isPrime[i])
                 al.add(i);
         }
         return al;
     }
-    private static void primeNumbers(ArrayList<Integer> al,int n){
-        for(int i=0;i<al.size();i++)
-        {
-            int other = n-al.get(i);
-            if(al.contains(other))
-            {
-                System.out.println("Value of a: "+ al.get(i) + "and b: " + other);
+
+    private static void primeNumbers(ArrayList<Integer> al, int n) {
+        for (int i = 0; i < al.size(); i++) {
+            int other = n - al.get(i);
+            if (al.contains(other)) {
+                System.out.println("Value of a: " + al.get(i) + "and b: " + other);
                 break;
             }
         }

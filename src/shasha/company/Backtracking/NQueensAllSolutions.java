@@ -7,6 +7,7 @@ public class NQueensAllSolutions {
         NQueensAllSolutions nQueensAllSolutions = new NQueensAllSolutions();
         nQueensAllSolutions.solveNQueens(4);
     }
+
     public ArrayList<ArrayList<String>> solveNQueens(int a) {
         ArrayList<ArrayList<String>> result = new ArrayList<>();
         ArrayList<ArrayList<String>> sol = new ArrayList<>();
