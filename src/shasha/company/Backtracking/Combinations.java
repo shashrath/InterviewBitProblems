@@ -1,11 +1,18 @@
 package shasha.company.Backtracking;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Combinations {
     public static void main(String[] args) {
         Combinations combinations = new Combinations();
-        combinations.combine(4, 2);
+        ArrayList<ArrayList<Integer>> result = combinations.combine(4, 4);
+        for(List<Integer> list : result){
+            for(Integer i: list){
+                System.out.print(i);
+            }
+            System.out.println();
+        }
     }
 
     private ArrayList<ArrayList<Integer>> combine(int n, int k) {

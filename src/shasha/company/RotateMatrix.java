@@ -76,7 +76,6 @@ public class RotateMatrix {
                 A.get(j).set(N - 1 - i, temp);
             }
         }
-
-
+        
     }
 }
